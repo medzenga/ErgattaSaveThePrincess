@@ -11,7 +11,7 @@
 class EnemyMng : public ObjMng
 {
 public:
-	EnemyMng(WeaponMng* weaponMngIn);
+	EnemyMng(WeaponMng& weaponMngIn);
 	~EnemyMng();
 
 	void LoadEnemyTypeDefs();	// Load variations of each enemy type that only differ by stats

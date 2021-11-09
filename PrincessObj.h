@@ -6,7 +6,7 @@
 class PrincessObj : public ActorObj
 {
 public:
-	PrincessObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	PrincessObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~PrincessObj();
 
 	void Update(float timeScale);

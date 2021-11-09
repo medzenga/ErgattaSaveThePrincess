@@ -6,7 +6,7 @@
 class PufferObj : public EnemyObj
 {
 public:
-	PufferObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	PufferObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~PufferObj();
 
 	void Update(float timeScale);

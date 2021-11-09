@@ -7,7 +7,7 @@
 class EnemyObj : public ActorObj
 {
 public:
-	EnemyObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	EnemyObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~EnemyObj();
 
 	void Update(float timeScale);

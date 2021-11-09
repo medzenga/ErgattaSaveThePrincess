@@ -6,7 +6,7 @@
 class TurtleObj : public EnemyObj
 {
 public:
-	TurtleObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	TurtleObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~TurtleObj();
 
 	void Update(float timeScale);

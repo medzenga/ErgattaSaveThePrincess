@@ -1,10 +1,10 @@
 #include "LevelLoader.h"
 
-LevelLoader::LevelLoader(PlayerMng* playerMngIn, EnemyMng* enemyMngIn, NpcMng* npcMngIn)
+LevelLoader::LevelLoader(PlayerMng& playerMngIn, EnemyMng& enemyMngIn, NpcMng& npcMngIn)
 {
-	playerMng = playerMngIn;
-	enemyMng = enemyMngIn;
-	npcMng = npcMngIn;
+	playerMng = &playerMngIn;
+	enemyMng = &enemyMngIn;
+	npcMng = &npcMngIn;
 }
 
 LevelLoader::~LevelLoader()

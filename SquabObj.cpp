@@ -7,7 +7,7 @@ const int defaultMoveType = MOVE_AIR;
 
 const int defaultPoints = 75;
 
-SquabObj::SquabObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
+SquabObj::SquabObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
 	: EnemyObj(statsIn, weaponMngIn)
 {
 	if (statsIn == NULL)

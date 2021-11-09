@@ -68,7 +68,7 @@ WeaponMng::~WeaponMng()
 void WeaponMng::AddWeapon(const WeaponStats& statsIn, unsigned int modelIn)
 {
 	GameObj* newWeapon = new WeaponObj(statsIn, modelIn);
-	ObjMng::AddObject(newWeapon);
+	ObjMng::AddObject(*newWeapon);
 }
 
 void WeaponMng::ClearAll()

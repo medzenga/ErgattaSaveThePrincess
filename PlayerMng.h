@@ -8,7 +8,7 @@
 class PlayerMng : public ObjMng
 {
 public:
-	PlayerMng(WeaponMng* weaponMngIn);
+	PlayerMng(WeaponMng& weaponMngIn);
 	~PlayerMng();
 
 	void AddPlayer(int playerNum, const pos3& startingPos);

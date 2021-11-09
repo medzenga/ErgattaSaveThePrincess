@@ -9,7 +9,7 @@ const int defaultMoveType = MOVE_GROUND;
 
 const int defaultPoints = 5000;
 
-EvilBossObj::EvilBossObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
+EvilBossObj::EvilBossObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
 	: EnemyObj(statsIn, weaponMngIn)
 {
 	if (statsIn == NULL)

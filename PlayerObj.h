@@ -8,7 +8,7 @@
 class PlayerObj : public ActorObj
 {
 public:
-	PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng* weaponMngIn);
+	PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~PlayerObj();
 
 	void Update(float timeScale, const Inputs& inputs);

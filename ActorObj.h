@@ -8,7 +8,7 @@
 class ActorObj : public GameObj
 {
 public:
-	ActorObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	ActorObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~ActorObj();
 
 	ActorStats GetActorStats();

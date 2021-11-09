@@ -8,7 +8,7 @@
 class NpcMng : public ObjMng
 {
 public:
-	NpcMng(WeaponMng* weaponMngIn);
+	NpcMng(WeaponMng& weaponMngIn);
 	~NpcMng();
 
 	void LoadNpcDefs();

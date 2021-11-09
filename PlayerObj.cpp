@@ -6,7 +6,7 @@ const float defaultArmor = 100;
 const int defaultWeapon = SHOTGUN;
 const int defaultMoveType = MOVE_GROUND;
 
-PlayerObj::PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng* weaponMngIn)
+PlayerObj::PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng& weaponMngIn)
 	: ActorObj(statsIn, weaponMngIn)
 {
 	if (statsIn == NULL)

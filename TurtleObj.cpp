@@ -7,7 +7,7 @@ const int defaultMoveType = MOVE_GROUND;
 
 const int defaultPoints = 25;
 
-TurtleObj::TurtleObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
+TurtleObj::TurtleObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
 	: EnemyObj(statsIn, weaponMngIn)
 {
 	if (statsIn == NULL)

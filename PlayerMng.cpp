@@ -1,8 +1,8 @@
 #include "PlayerMng.h"
 
-PlayerMng::PlayerMng(WeaponMng* weaponMngIn)
+PlayerMng::PlayerMng(WeaponMng& weaponMngIn)
 {
-	weaponMng = weaponMngIn;
+	weaponMng = &weaponMngIn;
 }
 
 PlayerMng::~PlayerMng()
@@ -12,9 +12,9 @@ PlayerMng::~PlayerMng()
 
 void PlayerMng::AddPlayer(int playerNum, const pos3& startingPos)
 {
-	GameObj* newPlayer = new PlayerObj(playerNum, NULL, weaponMng);
+	GameObj* newPlayer = new PlayerObj(playerNum, NULL, *weaponMng);
 	newPlayer->SetPos(startingPos);
-	ObjMng::AddObject(newPlayer);
+	ObjMng::AddObject(*newPlayer);
 }
 
 void PlayerMng::ClearAll()

@@ -8,7 +8,7 @@
 class LevelLoader
 {
 public:
-	LevelLoader(PlayerMng* playerMngIn, EnemyMng* enemyMngIn, NpcMng* npcMngIn);
+	LevelLoader(PlayerMng& playerMngIn, EnemyMng& enemyMngIn, NpcMng& npcMngIn);
 	~LevelLoader();
 
 	bool LoadLevel(int levelNum);

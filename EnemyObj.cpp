@@ -1,6 +1,6 @@
 #include "EnemyObj.h"
 
-EnemyObj::EnemyObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
+EnemyObj::EnemyObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
 	: ActorObj(statsIn, weaponMngIn)
 {
 

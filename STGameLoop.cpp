@@ -11,11 +11,11 @@
 STGameLoop::STGameLoop()
 {
 	weaponManager = new WeaponMng();
-	playerManager = new PlayerMng(weaponManager);
-	npcManager = new NpcMng(weaponManager);
-	enemyManager = new EnemyMng(weaponManager);
+	playerManager = new PlayerMng(*weaponManager);
+	npcManager = new NpcMng(*weaponManager);
+	enemyManager = new EnemyMng(*weaponManager);
 	inputHandler = new InputHandler();
-	levelLoader = new LevelLoader(playerManager, enemyManager, npcManager);
+	levelLoader = new LevelLoader(*playerManager, *enemyManager, *npcManager);
 }
 
 STGameLoop::~STGameLoop()

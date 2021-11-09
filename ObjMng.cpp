@@ -10,10 +10,10 @@ ObjMng::~ObjMng()
 	ClearAll();
 }
 
-void ObjMng::AddObject(GameObj* newObj)
+void ObjMng::AddObject(GameObj& newObj)
 {
-	newObj->next = objList;
-	objList = newObj;
+	newObj.next = objList;
+	objList = &newObj;
 }
 
 void ObjMng::ClearAll()

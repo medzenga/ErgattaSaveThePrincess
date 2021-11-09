@@ -15,7 +15,7 @@ public:
 	const void RenderAll();
 
 protected:
-	void AddObject(GameObj* newObj);
+	void AddObject(GameObj& newObj);
 	GameObj* objList;
 
 private:

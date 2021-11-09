@@ -6,7 +6,7 @@
 class EvilBossObj : public EnemyObj
 {
 public:
-	EvilBossObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	EvilBossObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
 	~EvilBossObj();
 
 	void Update(float timeScale);
