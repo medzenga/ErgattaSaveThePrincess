@@ -15,9 +15,9 @@ class GameObj
 public:
 	GameObj();
 	virtual ~GameObj();
-	GameObj* UpdateAll(float timeScale, GameObj** ListPtr);
-	const void RenderAll();
-	void DeleteAll(GameObj** ListPtr);
+
+	virtual void Update(float timeScale);
+	virtual const void Render();
 
 	pos3 GetPos();
 	bool isActive();
@@ -25,9 +25,6 @@ public:
 	GameObj* next;
 
 protected:
-	virtual void Update(float timeScale);
-	virtual const void Render();
-
 	bool active;
 	pos3 pos;
 

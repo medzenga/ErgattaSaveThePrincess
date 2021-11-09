@@ -55,12 +55,15 @@
     <Filter Include="Header Files\GameLoops">
       <UniqueIdentifier>{4dd8513b-eed0-4be5-bd72-9f073414f9de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\BaseObj">
+      <UniqueIdentifier>{a6571e47-558d-4b3f-84db-334c452d2c82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BaseObj">
+      <UniqueIdentifier>{612eb3ad-4a27-4861-a352-462fafcdd62b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MEdzengaErgattaProject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EvilBossObj.cpp">
@@ -105,9 +108,6 @@
     <ClCompile Include="PlayerMng.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMng.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="NpcMng.cpp">
       <Filter>Source Files\Npcs</Filter>
     </ClCompile>
@@ -138,11 +138,14 @@
     <ClCompile Include="LevelLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameObj.cpp">
+      <Filter>Source Files\BaseObj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMng.cpp">
+      <Filter>Source Files\BaseObj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameObj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyMng.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
@@ -185,9 +188,6 @@
     <ClInclude Include="PlayerMng.h">
       <Filter>Header Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="NpcMng.h">
       <Filter>Header Files\Npcs</Filter>
     </ClInclude>
@@ -217,6 +217,12 @@
     </ClInclude>
     <ClInclude Include="LevelLoader.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObj.h">
+      <Filter>Header Files\BaseObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMng.h">
+      <Filter>Header Files\BaseObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,25 +2,10 @@
 
 GameObj::GameObj()
 {
-
+	active = true;
 }
 
 GameObj::~GameObj()
-{
-
-}
-
-GameObj* GameObj::UpdateAll(float timeScale, GameObj** ListPtr)
-{
-	return NULL;
-}
-
-const void GameObj::RenderAll()
-{
-
-}
-
-void GameObj::DeleteAll(GameObj** ListPtr)
 {
 
 }
