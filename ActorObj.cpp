@@ -18,6 +18,11 @@ ActorStats ActorObj::GetActorStats()
 	return stats;
 }
 
+StatEnum* ActorObj::GetStatusEffects()
+{
+	return &statusEffects;
+}
+
 void ActorObj::Update(float timeScale)
 {
 

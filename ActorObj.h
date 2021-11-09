@@ -12,6 +12,7 @@ public:
 	~ActorObj();
 
 	ActorStats GetActorStats();
+	StatEnum* GetStatusEffects();
 
 protected:
 	void Update(float timeScale);
@@ -20,6 +21,7 @@ protected:
 	bool checkHasMoveType(int moveType);
 
 	ActorStats stats;
+	StatEnum statusEffects;
 	WeaponMng* weaponMng;
 };
 

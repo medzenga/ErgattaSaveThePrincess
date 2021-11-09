@@ -144,6 +144,9 @@
     <ClCompile Include="ObjMng.cpp">
       <Filter>Source Files\BaseObj</Filter>
     </ClCompile>
+    <ClCompile Include="StatEnum.cpp">
+      <Filter>Source Files\Stats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EnemyMng.h">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="ObjMng.h">
       <Filter>Header Files\BaseObj</Filter>
+    </ClInclude>
+    <ClInclude Include="StatEnum.h">
+      <Filter>Header Files\Stats</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

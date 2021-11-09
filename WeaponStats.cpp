@@ -2,7 +2,7 @@
 
 WeaponStats::WeaponStats()
 {
-	type = 0;
+	type = TYPE_NONE;
 	category = WEAPON_NONE;
 }
 
@@ -49,6 +49,11 @@ void WeaponStats::SetCategory(int categoryEnum)
 int WeaponStats::GetCategory()
 {
 	return category;
+}
+
+StatEnum* WeaponStats::getAdditionalEffects()
+{
+	return &additionalEffects;
 }
 
 const void WeaponStats::operator=(const WeaponStats& rhs)		// deep copy overload for '='
