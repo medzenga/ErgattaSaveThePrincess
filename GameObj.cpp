@@ -3,6 +3,7 @@
 GameObj::GameObj()
 {
 	active = true;
+	next = NULL;
 }
 
 GameObj::~GameObj()
@@ -13,6 +14,11 @@ GameObj::~GameObj()
 pos3 GameObj::GetPos()
 {
 	return pos;
+}
+
+void GameObj::SetPos(const pos3& targetPos)
+{
+	pos = targetPos;
 }
 
 bool GameObj::isActive()

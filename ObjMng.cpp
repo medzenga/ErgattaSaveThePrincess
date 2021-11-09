@@ -2,12 +2,12 @@
 
 ObjMng::ObjMng()
 {
-
+	objList = NULL;
 }
 
 ObjMng::~ObjMng()
 {
-
+	ClearAll();
 }
 
 void ObjMng::AddObject(GameObj* newObj)

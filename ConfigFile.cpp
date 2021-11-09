@@ -15,7 +15,7 @@ ConfigSettings ConfigFile::LoadConfig()
 	return currentSettings;
 }
 
-void ConfigFile::SaveConfig(ConfigSettings settingsToSave)
+void ConfigFile::SaveConfig(const ConfigSettings& settingsToSave)
 {
 
 }

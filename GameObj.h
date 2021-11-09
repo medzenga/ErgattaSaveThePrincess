@@ -20,6 +20,7 @@ public:
 	virtual const void Render();
 
 	pos3 GetPos();
+	void SetPos(const pos3& targetPos);
 	bool isActive();
 
 	GameObj* next;

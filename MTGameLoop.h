@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <process.h>
 
+class WeaponMng;
 class PlayerMng;
 class NpcMng;
 class EnemyMng;
@@ -26,6 +27,7 @@ private:
 	void StopGameUpdateThread();
 	void FlipFrame();
 
+	static WeaponMng* weaponManager;
 	static PlayerMng* playerManager;
 	static NpcMng* npcManager;
 	static EnemyMng* enemyManager;

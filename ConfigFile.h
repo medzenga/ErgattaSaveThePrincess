@@ -16,7 +16,7 @@ public:
 	~ConfigFile();
 
 	ConfigSettings LoadConfig();
-	void SaveConfig(ConfigSettings settingsToSave);
+	void SaveConfig(const ConfigSettings& settingsToSave);
 
 private:
 	ConfigSettings currentSettings;

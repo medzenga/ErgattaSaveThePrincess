@@ -11,19 +11,20 @@
 class EnemyMng : public ObjMng
 {
 public:
-	EnemyMng();
+	EnemyMng(WeaponMng* weaponMngIn);
 	~EnemyMng();
 
 	void LoadEnemyTypeDefs();	// Load variations of each enemy type that only differ by stats
 
-	void AddEnemy(int enemyTypeEnum, int subType, pos3 startingPos);
+	void AddEnemy(int enemyTypeEnum, int subType, const pos3& startingPos);
 	void ClearAll();
 
 	void UpdateAll(float timeScale);
 	const void RenderAll();
 
 private:
-	
+	WeaponMng* weaponMng;
+	ActorStats* subtypeArray;
 };
 
 #endif

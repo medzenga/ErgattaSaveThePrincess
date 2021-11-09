@@ -8,10 +8,12 @@
 class WeaponObj : public GameObj
 {
 public:
-	WeaponObj(WeaponStats& statsIn);
+	WeaponObj(const WeaponStats& statsIn);
 	~WeaponObj();
 
 	WeaponStats& GetStats();
+
+	const void operator=(const WeaponObj& rhs);		// deep copy overload for '='
 
 private:
 	WeaponStats stats;

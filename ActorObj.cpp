@@ -2,7 +2,10 @@
 
 ActorObj::ActorObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
 {
+	if (statsIn != NULL)
+		stats = *statsIn;
 
+	weaponMng = weaponMngIn;
 }
 
 ActorObj::~ActorObj()

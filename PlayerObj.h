@@ -3,21 +3,22 @@
 
 #include "ActorObj.h"
 #include "StatInt.h"
+#include "InputHandler.h"
 
 class PlayerObj : public ActorObj
 {
 public:
-	PlayerObj(ActorStats* statsIn, WeaponMng* weaponMngIn);
+	PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng* weaponMngIn);
 	~PlayerObj();
 
-	void Update(float timeScale);
+	void Update(float timeScale, const Inputs& inputs);
 	const void Render();
 
 	StatInt& GetScore();
 
 private:
 	StatInt score;
-	WeaponMng* weaponMng;
+	int playerNum;
 };
 
 #endif

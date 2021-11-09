@@ -11,7 +11,7 @@
 
 int main()
 {
-	const bool useMultithreading = true;
+	const bool useMultithreading = false;
 
 	std::cout << "Starting Save the Princess game...\n";
 

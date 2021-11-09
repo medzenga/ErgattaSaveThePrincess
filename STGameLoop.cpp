@@ -1,6 +1,7 @@
 #include "STGameLoop.h"
 
 #include "FrameTimer.h"
+#include "WeaponMng.h"
 #include "PlayerMng.h"
 #include "EnemyMng.h"
 #include "NpcMng.h"
@@ -9,15 +10,17 @@
 
 STGameLoop::STGameLoop()
 {
-	playerManager = new PlayerMng();
-	npcManager = new NpcMng();
-	enemyManager = new EnemyMng();
+	weaponManager = new WeaponMng();
+	playerManager = new PlayerMng(weaponManager);
+	npcManager = new NpcMng(weaponManager);
+	enemyManager = new EnemyMng(weaponManager);
 	inputHandler = new InputHandler();
 	levelLoader = new LevelLoader(playerManager, enemyManager, npcManager);
 }
 
 STGameLoop::~STGameLoop()
 {
+	delete weaponManager;
 	delete playerManager;
 	delete npcManager;
 	delete enemyManager;
@@ -66,7 +69,7 @@ void STGameLoop::RunSTLoop()
 
 	bool continueGame = true;
 	float timeScale = 1.0f;
-	int gameState = 1;
+	int gameState = 0;
 	while (continueGame)		// main game loop
 	{
 		Inputs newInputs = inputHandler->PollInputs();

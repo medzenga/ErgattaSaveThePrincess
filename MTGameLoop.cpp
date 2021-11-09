@@ -7,6 +7,7 @@
 #include "NpcMng.h"
 #include "LevelLoader.h"
 
+WeaponMng* MTGameLoop::weaponManager = NULL;
 PlayerMng* MTGameLoop::playerManager = NULL;
 NpcMng* MTGameLoop::npcManager = NULL;
 EnemyMng* MTGameLoop::enemyManager = NULL;
@@ -23,9 +24,10 @@ HANDLE MTGameLoop::gameUpdateLoopEvent = NULL;
 
 MTGameLoop::MTGameLoop()
 {
-	playerManager = new PlayerMng();
-	npcManager = new NpcMng();
-	enemyManager = new EnemyMng();
+	weaponManager = new WeaponMng();
+	playerManager = new PlayerMng(weaponManager);
+	npcManager = new NpcMng(weaponManager);
+	enemyManager = new EnemyMng(weaponManager);
 	inputHandler = new InputHandler();
 	levelLoader = new LevelLoader(playerManager, enemyManager, npcManager);
 
@@ -37,6 +39,7 @@ MTGameLoop::MTGameLoop()
 
 MTGameLoop::~MTGameLoop()
 {
+	delete weaponManager;
 	delete playerManager;
 	delete npcManager;
 	delete enemyManager;

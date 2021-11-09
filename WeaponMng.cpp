@@ -19,7 +19,7 @@ void WeaponMng::AddWeapon(int weaponEnum)
 
 void WeaponMng::ClearAll()
 {
-
+	ObjMng::ClearAll();
 }
 
 WeaponObj WeaponMng::GetWeaponData(int weaponEnum)

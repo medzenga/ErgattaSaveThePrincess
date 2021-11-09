@@ -1,6 +1,7 @@
 #ifndef SINGLE_THREAD_GAME_LOOP
 #define SINGLE_THREAD_GAME_LOOP
 
+class WeaponMng;
 class InputHandler;
 class NpcMng;
 class EnemyMng;
@@ -21,6 +22,7 @@ private:
 	void RenderFrame(int gameState);
 	void FlipFrame();
 
+	WeaponMng* weaponManager;
 	PlayerMng* playerManager;
 	NpcMng* npcManager;
 	EnemyMng* enemyManager;

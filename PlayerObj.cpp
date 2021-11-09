@@ -6,7 +6,7 @@ const float defaultArmor = 100;
 const int defaultWeapon = SHOTGUN;
 const int defaultMoveType = MOVE_GROUND;
 
-PlayerObj::PlayerObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
+PlayerObj::PlayerObj(int playerNumIn, ActorStats* statsIn, WeaponMng* weaponMngIn)
 	: ActorObj(statsIn, weaponMngIn)
 {
 	if (statsIn == NULL)
@@ -28,6 +28,8 @@ PlayerObj::PlayerObj(ActorStats* statsIn, WeaponMng* weaponMngIn)
 
 	score.SetMaxValue(1000000);
 	score.SetValue(0);
+
+	playerNum = playerNumIn;
 }
 
 PlayerObj::~PlayerObj()
@@ -35,7 +37,7 @@ PlayerObj::~PlayerObj()
 
 }
 
-void PlayerObj::Update(float timeScale)
+void PlayerObj::Update(float timeScale, const Inputs& inputs)
 {
 
 }

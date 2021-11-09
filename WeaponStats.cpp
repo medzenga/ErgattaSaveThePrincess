@@ -2,7 +2,7 @@
 
 WeaponStats::WeaponStats()
 {
-
+	type = 0;
 }
 
 WeaponStats::~WeaponStats()
@@ -32,7 +32,7 @@ StatFloat& WeaponStats::GetAttackDurationStat()
 
 void WeaponStats::SetType(int typeEnum)
 {
-
+	type = typeEnum;
 }
 
 int WeaponStats::GetType()
