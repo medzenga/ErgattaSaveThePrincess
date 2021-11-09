@@ -3,6 +3,7 @@
 WeaponStats::WeaponStats()
 {
 	type = 0;
+	category = WEAPON_NONE;
 }
 
 WeaponStats::~WeaponStats()
@@ -40,10 +41,21 @@ int WeaponStats::GetType()
 	return type;
 }
 
+void WeaponStats::SetCategory(int categoryEnum)
+{
+	category = categoryEnum;
+}
+
+int WeaponStats::GetCategory()
+{
+	return category;
+}
+
 const void WeaponStats::operator=(const WeaponStats& rhs)		// deep copy overload for '='
 {
 	damage = rhs.damage;
 	range = rhs.range;
 	cooldown = rhs.cooldown;
 	type = rhs.type;
+	category = rhs.category;
 }

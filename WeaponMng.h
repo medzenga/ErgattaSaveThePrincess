@@ -4,7 +4,7 @@
 #include "ObjMng.h"
 #include "WeaponObj.h"
 
-#define NONE 0x01000000
+#define TYPE_NONE 0x01000000
 #define SHOTGUN 0x01000001
 #define FIREBALL 0x01000002
 #define BATTLE_AXE 0x01000003
@@ -18,13 +18,12 @@ public:
 	WeaponMng();
 	~WeaponMng();
 
-	void AddWeapon(int weaponEnum);
+	void AddWeapon(const WeaponStats& statsIn, unsigned int modelIn);
 	void ClearAll();
 
 	WeaponObj GetWeaponData(int weaponEnum);
 
 private:
-	WeaponObj* weaponDefList;
 };
 
 #endif

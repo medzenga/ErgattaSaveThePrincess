@@ -1,8 +1,9 @@
 #include "WeaponObj.h"
 
-WeaponObj::WeaponObj(const WeaponStats& statsIn)
+WeaponObj::WeaponObj(const WeaponStats& statsIn, unsigned int modelIn)
 {
 	stats = statsIn;
+	model = modelIn;
 }
 
 WeaponObj::~WeaponObj()

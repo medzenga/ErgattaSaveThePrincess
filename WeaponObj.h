@@ -8,7 +8,7 @@
 class WeaponObj : public GameObj
 {
 public:
-	WeaponObj(const WeaponStats& statsIn);
+	WeaponObj(const WeaponStats& statsIn, unsigned int modelIn);
 	~WeaponObj();
 
 	WeaponStats& GetStats();
@@ -17,6 +17,7 @@ public:
 
 private:
 	WeaponStats stats;
+	unsigned int model;
 };
 
 #endif
