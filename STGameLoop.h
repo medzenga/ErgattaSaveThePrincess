@@ -2,6 +2,7 @@
 #define SINGLE_THREAD_GAME_LOOP
 
 class WeaponMng;
+class WorldMng;
 class InputHandler;
 class NpcMng;
 class EnemyMng;
@@ -23,6 +24,7 @@ private:
 	void FlipFrame();
 
 	WeaponMng* weaponManager;
+	WorldMng* worldManager;
 	PlayerMng* playerManager;
 	NpcMng* npcManager;
 	EnemyMng* enemyManager;

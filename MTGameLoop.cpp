@@ -8,6 +8,7 @@
 #include "LevelLoader.h"
 
 WeaponMng* MTGameLoop::weaponManager = NULL;
+WorldMng* MTGameLoop::worldManager = NULL;
 PlayerMng* MTGameLoop::playerManager = NULL;
 NpcMng* MTGameLoop::npcManager = NULL;
 EnemyMng* MTGameLoop::enemyManager = NULL;
@@ -25,11 +26,12 @@ HANDLE MTGameLoop::gameUpdateLoopEvent = NULL;
 MTGameLoop::MTGameLoop()
 {
 	weaponManager = new WeaponMng();
-	playerManager = new PlayerMng(*weaponManager);
-	npcManager = new NpcMng(*weaponManager);
-	enemyManager = new EnemyMng(*weaponManager);
+	worldManager = new WorldMng();
+	playerManager = new PlayerMng(*worldManager, *weaponManager);
+	npcManager = new NpcMng(*worldManager, *weaponManager);
+	enemyManager = new EnemyMng(*worldManager, *weaponManager);
 	inputHandler = new InputHandler();
-	levelLoader = new LevelLoader(*playerManager, *enemyManager, *npcManager);
+	levelLoader = new LevelLoader(*worldManager, *playerManager, *enemyManager, *npcManager);
 
 	threadUpdateTimeScale = 1.0f;
 	continueGame = true;
@@ -40,6 +42,7 @@ MTGameLoop::MTGameLoop()
 MTGameLoop::~MTGameLoop()
 {
 	delete weaponManager;
+	delete worldManager;
 	delete playerManager;
 	delete npcManager;
 	delete enemyManager;
@@ -94,6 +97,7 @@ bool MTGameLoop::UpdateGame(float timeScale, int& gameStateRef)
 
 	if (gameStateRef == 1)
 	{
+		worldManager->Update(timeScale);
 		Inputs newInputs = inputHandler->PollInputs();
 		playerManager->UpdateAll(timeScale, newInputs);
 		npcManager->UpdateAll(timeScale);
@@ -107,6 +111,7 @@ void MTGameLoop::RenderFrame(int gameState)
 {
 	if (gameState == 1)
 	{
+		worldManager->Render();
 		playerManager->RenderAll();
 		npcManager->RenderAll();
 		enemyManager->RenderAll();

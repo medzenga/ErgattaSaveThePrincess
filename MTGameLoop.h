@@ -5,6 +5,7 @@
 #include <process.h>
 
 class WeaponMng;
+class WorldMng;
 class PlayerMng;
 class NpcMng;
 class EnemyMng;
@@ -28,6 +29,7 @@ private:
 	void FlipFrame();
 
 	static WeaponMng* weaponManager;
+	static WorldMng* worldManager;
 	static PlayerMng* playerManager;
 	static NpcMng* npcManager;
 	static EnemyMng* enemyManager;

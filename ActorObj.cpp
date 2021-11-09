@@ -1,10 +1,11 @@
 #include "ActorObj.h"
 
-ActorObj::ActorObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
+ActorObj::ActorObj(ActorStats* statsIn, WorldMng& worldMngIn, WeaponMng& weaponMngIn)
 {
 	if (statsIn != NULL)
 		stats = *statsIn;
 
+	worldMng = &worldMngIn;
 	weaponMng = &weaponMngIn;
 }
 

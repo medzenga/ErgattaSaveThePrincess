@@ -7,8 +7,8 @@ const int defaultMoveType = MOVE_WATER;
 
 const int defaultPoints = 50;
 
-PufferObj::PufferObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
-	: EnemyObj(statsIn, weaponMngIn)
+PufferObj::PufferObj(ActorStats* statsIn, WorldMng& worldMngIn, WeaponMng& weaponMngIn)
+	: EnemyObj(statsIn, worldMngIn, weaponMngIn)
 {
 	if (statsIn == NULL)
 	{

@@ -2,6 +2,7 @@
 #define ENEMY_MANAGER
 
 #include "ObjMng.h"
+#include "WorldMng.h"
 
 #include "EvilBossObj.h"
 #include "SquabObj.h"
@@ -11,7 +12,7 @@
 class EnemyMng : public ObjMng
 {
 public:
-	EnemyMng(WeaponMng& weaponMngIn);
+	EnemyMng(WorldMng& worldMngIn, WeaponMng& weaponMngIn);
 	~EnemyMng();
 
 	void LoadEnemyTypeDefs();	// Load variations of each enemy type that only differ by stats
@@ -23,6 +24,7 @@ public:
 	const void RenderAll();
 
 private:
+	WorldMng* worldMng;
 	WeaponMng* weaponMng;
 	ActorStats* subtypeArray;
 };

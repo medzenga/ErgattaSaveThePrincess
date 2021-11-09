@@ -1,7 +1,8 @@
 #include "NpcMng.h"
 
-NpcMng::NpcMng(WeaponMng& weaponMngIn)
+NpcMng::NpcMng(WorldMng& worldMngIn, WeaponMng& weaponMngIn)
 {
+	worldMng = &worldMngIn;
 	weaponMng = &weaponMngIn;
 }
 
@@ -19,7 +20,7 @@ void NpcMng::AddNpc(int npcTypeEnum, const pos3& startingPos)
 {
 	if (npcTypeEnum == PRINCESS)
 	{
-		GameObj* newNpc = new PrincessObj(NULL, *weaponMng);
+		GameObj* newNpc = new PrincessObj(NULL, *worldMng, *weaponMng);
 		ObjMng::AddObject(*newNpc);
 	}
 }

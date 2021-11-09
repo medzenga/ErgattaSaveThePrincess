@@ -4,11 +4,12 @@
 #include "GameObj.h"
 #include "ActorStats.h"
 #include "WeaponMng.h"
+#include "WorldMng.h"
 
 class ActorObj : public GameObj
 {
 public:
-	ActorObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
+	ActorObj(ActorStats* statsIn, WorldMng& worldMngIn, WeaponMng& weaponMngIn);
 	~ActorObj();
 
 	ActorStats GetActorStats();
@@ -22,6 +23,7 @@ protected:
 
 	ActorStats stats;
 	StatEnum statusEffects;
+	WorldMng* worldMng;
 	WeaponMng* weaponMng;
 };
 

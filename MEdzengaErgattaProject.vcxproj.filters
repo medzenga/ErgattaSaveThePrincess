@@ -147,6 +147,9 @@
     <ClCompile Include="StatEnum.cpp">
       <Filter>Source Files\Stats</Filter>
     </ClCompile>
+    <ClCompile Include="WorldMng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EnemyMng.h">
@@ -229,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="StatEnum.h">
       <Filter>Header Files\Stats</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMng.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 
 #include "FrameTimer.h"
 #include "WeaponMng.h"
+#include "WorldMng.h"
 #include "PlayerMng.h"
 #include "EnemyMng.h"
 #include "NpcMng.h"
@@ -11,16 +12,18 @@
 STGameLoop::STGameLoop()
 {
 	weaponManager = new WeaponMng();
-	playerManager = new PlayerMng(*weaponManager);
-	npcManager = new NpcMng(*weaponManager);
-	enemyManager = new EnemyMng(*weaponManager);
+	worldManager = new WorldMng();
+	playerManager = new PlayerMng(*worldManager, *weaponManager);
+	npcManager = new NpcMng(*worldManager, *weaponManager);
+	enemyManager = new EnemyMng(*worldManager, *weaponManager);
 	inputHandler = new InputHandler();
-	levelLoader = new LevelLoader(*playerManager, *enemyManager, *npcManager);
+	levelLoader = new LevelLoader(*worldManager, *playerManager, *enemyManager, *npcManager);
 }
 
 STGameLoop::~STGameLoop()
 {
 	delete weaponManager;
+	delete worldManager;
 	delete playerManager;
 	delete npcManager;
 	delete enemyManager;
@@ -40,6 +43,7 @@ bool STGameLoop::UpdateGame(float timeScale, const Inputs& inputs, int& gameStat
 
 	if (gameStateRef == 1)
 	{
+		worldManager->Update(timeScale);
 		playerManager->UpdateAll(timeScale, inputs);
 		npcManager->UpdateAll(timeScale);
 		enemyManager->UpdateAll(timeScale);
@@ -52,6 +56,7 @@ void STGameLoop::RenderFrame(int gameState)
 {
 	if (gameState == 1)
 	{
+		worldManager->Render();
 		playerManager->RenderAll();
 		npcManager->RenderAll();
 		enemyManager->RenderAll();

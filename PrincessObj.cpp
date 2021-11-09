@@ -5,8 +5,8 @@ const float defaultArmor = 0;
 const int defaultWeapon = NULL;
 const int defaultMoveType = MOVE_GROUND;
 
-PrincessObj::PrincessObj(ActorStats* statsIn, WeaponMng& weaponMngIn)
-	: ActorObj(statsIn, weaponMngIn)
+PrincessObj::PrincessObj(ActorStats* statsIn, WorldMng& worldMngIn, WeaponMng& weaponMngIn)
+	: ActorObj(statsIn, worldMngIn, weaponMngIn)
 {
 	if (statsIn == NULL)
 	{

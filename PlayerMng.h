@@ -2,13 +2,14 @@
 #define PLAYER_MANAGER
 
 #include "ObjMng.h"
+#include "WorldMng.h"
 #include "PlayerObj.h"
 #include "InputHandler.h"
 
 class PlayerMng : public ObjMng
 {
 public:
-	PlayerMng(WeaponMng& weaponMngIn);
+	PlayerMng(WorldMng& worldMngIn, WeaponMng& weaponMngIn);
 	~PlayerMng();
 
 	void AddPlayer(int playerNum, const pos3& startingPos);
@@ -18,6 +19,7 @@ public:
 	const void RenderAll();
 
 private:
+	WorldMng* worldMng;
 	WeaponMng* weaponMng;
 };
 

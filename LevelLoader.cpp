@@ -1,7 +1,8 @@
 #include "LevelLoader.h"
 
-LevelLoader::LevelLoader(PlayerMng& playerMngIn, EnemyMng& enemyMngIn, NpcMng& npcMngIn)
+LevelLoader::LevelLoader(WorldMng& worldMngIn, PlayerMng& playerMngIn, EnemyMng& enemyMngIn, NpcMng& npcMngIn)
 {
+	worldMng = &worldMngIn;
 	playerMng = &playerMngIn;
 	enemyMng = &enemyMngIn;
 	npcMng = &npcMngIn;

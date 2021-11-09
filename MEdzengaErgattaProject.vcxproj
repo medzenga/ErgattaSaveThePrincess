@@ -172,6 +172,7 @@
     <ClCompile Include="WeaponMng.cpp" />
     <ClCompile Include="WeaponObj.cpp" />
     <ClCompile Include="WeaponStats.cpp" />
+    <ClCompile Include="WorldMng.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActorObj.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="StatInt.h" />
     <ClInclude Include="TurtleObj.h" />
     <ClInclude Include="WeaponObj.h" />
+    <ClInclude Include="WorldMng.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

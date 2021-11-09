@@ -8,7 +8,7 @@
 class NpcMng : public ObjMng
 {
 public:
-	NpcMng(WeaponMng& weaponMngIn);
+	NpcMng(WorldMng& worldMngIn, WeaponMng& weaponMngIn);
 	~NpcMng();
 
 	void LoadNpcDefs();
@@ -20,6 +20,7 @@ public:
 	const void RenderAll();
 
 private:
+	WorldMng* worldMng;
 	WeaponMng* weaponMng;
 };
 

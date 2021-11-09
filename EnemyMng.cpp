@@ -1,7 +1,8 @@
 #include "EnemyMng.h"
 
-EnemyMng::EnemyMng(WeaponMng& weaponMngIn)
+EnemyMng::EnemyMng(WorldMng& worldMngIn, WeaponMng& weaponMngIn)
 {
+	worldMng = &worldMngIn;
 	weaponMng = &weaponMngIn;
 	subtypeArray = NULL;
 }
@@ -28,10 +29,10 @@ void EnemyMng::AddEnemy(int enemyTypeEnum, int subType, const pos3& startingPos)
 	GameObj* newEnemy = NULL;
 	switch (enemyTypeEnum)
 	{
-	case PUFFER: newEnemy = new PufferObj(newEnemyStats, *weaponMng); break;
-	case SQUAB: newEnemy = new SquabObj(newEnemyStats, *weaponMng); break;
-	case TURTLE: newEnemy = new TurtleObj(newEnemyStats, *weaponMng); break;
-	case EVIL_BOSS: newEnemy = new EvilBossObj(newEnemyStats, *weaponMng); break;
+	case PUFFER: newEnemy = new PufferObj(newEnemyStats, *worldMng, *weaponMng); break;
+	case SQUAB: newEnemy = new SquabObj(newEnemyStats, *worldMng, *weaponMng); break;
+	case TURTLE: newEnemy = new TurtleObj(newEnemyStats, *worldMng, *weaponMng); break;
+	case EVIL_BOSS: newEnemy = new EvilBossObj(newEnemyStats, *worldMng, *weaponMng); break;
 	}
 
 	if (newEnemy == NULL)

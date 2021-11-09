@@ -6,7 +6,7 @@
 class SquabObj : public EnemyObj
 {
 public:
-	SquabObj(ActorStats* statsIn, WeaponMng& weaponMngIn);
+	SquabObj(ActorStats* statsIn, WorldMng& worldMngIn, WeaponMng& weaponMngIn);
 	~SquabObj();
 
 	void Update(float timeScale);
