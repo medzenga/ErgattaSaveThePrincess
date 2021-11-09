@@ -22,6 +22,9 @@ void StatEnum::AddEnum(int enumIn)
 
 void StatEnum::RemoveEnum(int enumIn)
 {
+	if (!GetHasEnum(enumIn))
+		return;
+
 	enumVal = enumVal ^ enumIn;
 }
 
