@@ -19,7 +19,7 @@ public:
 
 	void ClearWeapons();
 	void EquipWeapon(WeaponObj& weaponToEquip);
-	const WeaponObj* GetWeaponData();
+	const WeaponObj* GetWeaponData(int weaponSlot);
 
 	void AddMovementType(int moveAdd);
 	void RemoveMovementType(int moveRemove);
