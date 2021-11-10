@@ -31,7 +31,7 @@ private:
 	StatFloat health;
 	StatFloat armor;
 	WeaponObj* equippedWeaponList;
-	int movementTypes;
+	StatEnum movementTypes;
 };
 
 #endif

@@ -3,7 +3,6 @@
 ActorStats::ActorStats()
 {
 	equippedWeaponList = NULL;
-	movementTypes = 0;
 }
 
 ActorStats::~ActorStats()
@@ -23,12 +22,19 @@ StatFloat& ActorStats::GetArmorStat()
 
 void ActorStats::ClearWeapons()
 {
-
+	while (equippedWeaponList != NULL)
+	{
+		WeaponObj* tempObj = equippedWeaponList;
+		equippedWeaponList = static_cast<WeaponObj*>(equippedWeaponList->next);
+		delete tempObj;
+	}
 }
 
 void ActorStats::EquipWeapon(WeaponObj& weaponToEquip)
 {
-
+	WeaponObj* newWeaponInstance = new WeaponObj(weaponToEquip);
+	newWeaponInstance->next = equippedWeaponList;
+	equippedWeaponList = newWeaponInstance;
 }
 
 const WeaponObj* ActorStats::GetWeaponData()
@@ -38,12 +44,12 @@ const WeaponObj* ActorStats::GetWeaponData()
 
 void ActorStats::AddMovementType(int moveAdd)
 {
-
+	movementTypes.AddEnum(moveAdd);
 }
 
 void ActorStats::RemoveMovementType(int moveRemove)
 {
-
+	movementTypes.RemoveEnum(moveRemove);
 }
 
 bool ActorStats::GetHasMovementType(int moveType)
@@ -53,5 +59,14 @@ bool ActorStats::GetHasMovementType(int moveType)
 
 const void ActorStats::operator=(const ActorStats& rhs)		// deep copy overload for '='
 {
+	health = rhs.health;
+	armor = rhs.armor;
+	movementTypes = rhs.movementTypes;
 
+	WeaponObj* iterator = rhs.equippedWeaponList;
+	while (iterator != NULL)
+	{
+		EquipWeapon(*iterator);
+		iterator = static_cast<WeaponObj*>(iterator->next);
+	}
 }
